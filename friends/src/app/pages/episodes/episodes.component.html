@@ -1,0 +1,37 @@
+<app-header [title]="title" (click)="back()">
+  <i left class="fa fa-arrow-right"></i>
+</app-header>
+
+<div class="page-content">
+
+  <div *ngFor="let season of seasons">
+
+    <div class="bg-theme-5 border-2 border-bottom border-theme-3 d-flex mb-3 p-3 season-details mn-1">
+      <img src="assets/img/friends.jfif" class="w-100 rounded-4">
+      <div class="me-2">
+        <h5 class="text-1">فصل: <b>{{ season.number }}</b></h5>
+        <h6 class="text-1">{{ season.title }}</h6>
+        <p>{{ season.summary }}</p>
+        <span class="d-block">تاریخ انتشار: <b class="text-1">{{ season.date }}</b></span>
+        <span class="d-block">کارگردان: <b class="text-1">{{ season.director }}</b></span>
+        <span class="d-block">نویسنده: <b class="text-1">{{ season.writers.join(', ') }}</b></span>
+        <span class="d-block">بازیگران: <b class="text-1">{{ season.stars.join(', ') }}</b></span>
+      </div>
+    </div>
+
+    <div class="mt-4 episode-list">
+      <div *ngFor="let episode of season.episodes" class="d-flex border rounded-3 border-2 mb-2"
+        [routerLink]="['/app', season.number, 'episods', episode.number]">
+        <div class="w-75 pe-2">
+          <h5>قسمت: <b>{{ episode.number }}</b></h5>
+          <h6>{{ episode.title }}</h6>
+          <p>{{ episode.summary }}</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>

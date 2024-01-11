@@ -1,0 +1,35 @@
+
+.splash-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+  }
+  
+  .btn-getstarted {
+    display: inline-block;
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-getstarted:hover {
+    background-color: #444;
+    cursor: pointer;
+  } 

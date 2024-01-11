@@ -1,0 +1,10 @@
+<header class="footer fixed-top bg-theme-2 text-center text-white d-flex align-items-center header-footer"
+    [ngClass]="classList">
+    <div class="w-25">
+        <ng-content select="[right]"></ng-content>
+    </div>
+    <h3 class="d-flex justify-content-center align-items-center ex-f-15 w-50">{{ title }}</h3>
+    <div class="w-25">
+        <ng-content select="[left]"></ng-content>
+    </div>
+</header>
