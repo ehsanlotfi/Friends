@@ -1,7 +1,16 @@
-<router-outlet></router-outlet>
-<footer class="footer fixed-bottom bg-theme-2 d-flex justify-content-around text-white header-footer">
-  <i class="fa fa-info-circle fa-2x w-100 text-center py-3" [routerLink]="['/about']" routerLinkActive="bg-theme-1"></i>
-  <i class="fa fa-blackboard fa-2x w-100 text-center py-3" [routerLink]="['/leitner']"
-    routerLinkActive="bg-theme-1"></i>
-  <i class="fa fa-list-check fa-2x w-100 text-center py-3" [routerLink]="['/app']" routerLinkActive="bg-theme-1"></i>
-</footer>
+
+<ion-footer>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button href="/about" router-direction="forward">
+        <ion-icon class="fa fa-info-circle fa-2x"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button href="/leitner" router-direction="forward">
+        <ion-icon class="fa fa-blackboard fa-2x"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button href="/app" router-direction="forward">
+        <ion-icon class="fa fa-list-check fa-2x"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-footer>
