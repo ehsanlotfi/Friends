@@ -11,7 +11,9 @@ const routes: Routes = [
     path: 'app',
     component: pages.MasterLayout,
     children: [
-      { path: '', component: pages.SeasonsPage }
+      { path: '', component: pages.SeasonsPage },
+      { path: ':seasonId/episods', component: pages.EpisodesPage },
+      { path: ':seasonId/episods/:episodeId', component: pages.QuotesPage }
     ]
   }
 ];
