@@ -1,12 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import * as pages from './pages';
+
+@Component({
+  selector: 'app-root',
+  template: `<ion-app><ion-router-outlet></ion-router-outlet></ion-app>`
+})
+export class AppComponent { }
 
 @NgModule({
   declarations: [AppComponent, pages.SplashPage, pages.MasterLayout, pages.SeasonsPage],

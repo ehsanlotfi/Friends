@@ -8,7 +8,7 @@ const routes: Routes = [
     component: pages.SplashPage
   },
   {
-    path: 'tabs',
+    path: 'app',
     component: pages.MasterLayout,
     children: [
       { path: '', component: pages.SeasonsPage }
