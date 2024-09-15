@@ -145,3 +145,17 @@
     direction: ltr !important;
     text-align: left !important;
 }
+
+.leitner-container {
+    .main-sentence {
+        text-align: center !important;
+    }
+
+    .buttons {
+        display: flex;
+    }
+
+    .card {
+        height: 30vh;
+    }
+}
