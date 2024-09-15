@@ -9,4 +9,9 @@ export class AboutUsPage
 
   constructor() { }
 
+  sendEmail()
+  {
+    window.open('mailto:your-email@example.com');
+  }
+
 }
