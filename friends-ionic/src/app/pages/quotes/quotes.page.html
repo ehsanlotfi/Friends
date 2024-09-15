@@ -14,7 +14,9 @@
       </ion-item>
       <div class="ion-padding" slot="content">
         <p>{{ quote.Trans }}</p>
-        <ion-button expand="block" (click)="setLeitnerCard(quote)">افزودن به لایتنر</ion-button>
+        <ion-button expand="block" *ngIf="!quote.CntSeen" (click)="setLeitnerCard(quote)">افزودن به لایتنر</ion-button>
+        <ion-button expand="block" fill="outline" *ngIf="quote.CntSeen" [disabled]="true">به لایتنر اضافه شده
+          است</ion-button>
       </div>
     </ion-accordion>
   </ion-accordion-group>

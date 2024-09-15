@@ -11,7 +11,7 @@ export class AboutUsPage
 
   sendEmail()
   {
-    window.open('mailto:your-email@example.com');
+    window.open('mailto:lotfiniamail@gmail.com');
   }
 
 }
