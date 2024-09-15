@@ -11,9 +11,12 @@ const routes: Routes = [
     path: 'app',
     component: pages.MasterLayout,
     children: [
-      { path: '', component: pages.SeasonsPage },
+      { path: '', redirectTo: 'seasons', pathMatch: 'full' },
+      { path: 'seasons', component: pages.SeasonsPage },
       { path: ':seasonId/episods', component: pages.EpisodesPage },
-      { path: ':seasonId/episods/:episodeId', component: pages.QuotesPage }
+      { path: ':seasonId/episods/:episodeId', component: pages.QuotesPage },
+      { path: 'leitner', component: pages.LeitnerListPage },
+      { path: 'about', component: pages.AboutUsPage },
     ]
   }
 ];
