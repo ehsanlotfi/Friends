@@ -6,26 +6,37 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" *ngIf="quote && quote?.Content">
+<ion-content class="ion-padding">
   <div class="center-container leitner-container">
-    <div class="card">
-      <p class="main-sentence ltr">{{ quote.Content }}</p>
-      <ion-card (click)="quote.showTrans = !quote.showTrans">
-        <ion-card-content *ngIf="quote?.showTrans">{{ quote.Trans }}</ion-card-content>
-        <ion-card-content *ngIf="!quote?.showTrans">
-          <ion-icon name="eye-off-outline"></ion-icon>
-          برای دیدن ترجمه کلیک کنید
-        </ion-card-content>
-      </ion-card>
-    </div>
+    <ng-container *ngIf="quote && quote?.Content">
+      <div class="card">
+        <p class="main-sentence ltr">{{ quote.Content }}</p>
+        <ion-card (click)="quote.showTrans = !quote.showTrans">
+          <ion-card-content *ngIf="quote?.showTrans">{{ quote.Trans }}</ion-card-content>
+          <ion-card-content *ngIf="!quote?.showTrans">
+            <ion-icon name="eye-off-outline"></ion-icon>
+            برای دیدن ترجمه کلیک کنید
+          </ion-card-content>
+        </ion-card>
+      </div>
 
-    <div class="buttons">
-      <ion-button expand="full" size="large" color="success"
-        (click)="setLeitnerType(quote.ID, type.EASY)">آسان</ion-button>
-      <ion-button expand="full" size="large" color="warning"
-        (click)="setLeitnerType(quote.ID, type.MEDIUM)">متوسط</ion-button>
-      <ion-button expand="full" size="large" color="danger"
-        (click)="setLeitnerType(quote.ID, type.HARD)">سخت</ion-button>
-    </div>
+      <div class="buttons">
+        <ion-button expand="full" size="large" color="success"
+          (click)="setLeitnerType(quote.ID, type.EASY)">آسان</ion-button>
+        <ion-button expand="full" size="large" color="warning"
+          (click)="setLeitnerType(quote.ID, type.MEDIUM)">متوسط</ion-button>
+        <ion-button expand="full" size="large" color="danger"
+          (click)="setLeitnerType(quote.ID, type.HARD)">سخت</ion-button>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!(quote && quote?.Content)">
+      <ion-button expand="block" fill="outline" [disabled]="true">
+        امروز هیچ جمله‌ای در لیست شما وجود ندارد.
+      </ion-button>
+    </ng-container>
   </div>
+</ion-content>
+
+<ion-content class="ion-padding" *ngIf="(quote && quote?.Content)">
+
 </ion-content>

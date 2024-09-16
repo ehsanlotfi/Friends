@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CapacitorSQLite, capSQLiteChanges } from '@capacitor-community/sqlite';
 import { Capacitor } from '@capacitor/core';
 import { FilesystemPlugin, Filesystem, Directory } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
 import { Observable, from, map, mergeMap } from 'rxjs';
 
 @Injectable({
@@ -17,16 +18,27 @@ export class SQLiteService
 
     private async copyDB()
     {
-        /*
-         دیتابیسی که در مسیر assets/databases
-         قرار بگیره را کپی میکند برای استفاده در اندروید
-         */
+        // بررسی می‌کنیم که آیا قبلاً دیتابیس کپی شده است یا خیر
+        const { value } = await Preferences.get({ key: 'dbCopied' });
+
+        if (value === 'true')
+        {
+            // اگر قبلاً کپی شده است، عملیات را متوقف می‌کنیم
+            console.log('Database has already been copied.');
+            return;
+        }
+
+        // دیتابیس را کپی می‌کنیم
         const uri = await Filesystem.getUri({
             directory: Directory.Data,
             path: this.database,
         });
 
         await CapacitorSQLite.copyFromAssets({});
+
+        // بعد از کپی دیتابیس، فلگ را به true تنظیم می‌کنیم
+        await Preferences.set({ key: 'dbCopied', value: 'true' });
+        console.log('Database copied successfully.');
     }
 
     private async createConnection()
@@ -146,8 +158,5 @@ export class SQLiteService
             }))
         }));
     }
-
-
-
 
 }
