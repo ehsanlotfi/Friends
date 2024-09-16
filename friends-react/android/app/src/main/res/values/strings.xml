@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">friends-sentence-app</string>
-    <string name="title_activity_main">friends-sentence-app</string>
-    <string name="package_name">ir.codeino.app</string>
-    <string name="custom_url_scheme">ir.codeino.app</string>
-</resources>

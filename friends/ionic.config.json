@@ -1,7 +1,0 @@
-{
-  "name": "friends",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
