@@ -82,7 +82,34 @@ export class GlobalService
     }
   }
 
-  setLeitnerType(id: number, type: _mod.QuoteType)
+  getStatistics(): Observable<_mod.Statistics[]>
+  {
+    const query = `SELECT 
+                      COUNT(CASE WHEN DateSeen > strftime('%s', 'now', '-7 days') 
+                                    AND Type = 0 
+                                    AND CntSeen >= 4 THEN 1 END) AS Learned,
+                      COUNT(CASE WHEN DateSeen > strftime('%s', 'now', '-7 days') 
+                                    AND Type = 0 
+                                    AND CntSeen < 4 THEN 1 END) AS LongTermMemory,
+                      COUNT(CASE WHEN DateSeen > strftime('%s', 'now', '-3 days') 
+                                    AND Type = 1 THEN 1 END) AS ShortTermMemory,
+                      COUNT(CASE WHEN DateSeen > strftime('%s', 'now', '-1 days') 
+                                    AND Type = 2 THEN 1 END) AS NeedReview
+                  FROM Translates;`;
+
+    if (Capacitor.isNativePlatform())
+    {
+      return this._sqlite.queryObservable<_mod.Statistics>(query).pipe(map(data =>
+      {
+        return data;
+      }));
+    } else
+    {
+      return of([]);
+    }
+  }
+
+  setLeitnerType(id: number, type: _mod.QuoteType): Observable<boolean>
   {
 
     const query = type == _mod.QuoteType.EASY ?
@@ -91,10 +118,11 @@ export class GlobalService
 
     if (Capacitor.isNativePlatform())
     {
-      return this._sqlite.excuteObservable(query);
+      this._sqlite.excuteObservable(query).subscribe();
+      return of(true);
     } else
     {
-      return of();
+      return of(false);
     }
 
   }

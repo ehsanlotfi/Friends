@@ -7,8 +7,19 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="center-container leitner-container">
-    <!-- Skeleton loader for quote -->
+  <div class="leitner-container">
+
+    <div class="statistics-leitner-container">
+      <div *ngFor="let item of statistics" [ngClass]="item.classes">
+        <ion-text>
+          <h6>{{item.value}}</h6>
+        </ion-text>
+        <ion-text>
+          <h6>{{item.title}}</h6>
+        </ion-text>
+      </div>
+    </div>
+
     <ng-container *ngIf="loading; else quoteContent">
       <div class="card" [style.width.%]="100">
         <p class="main-sentence ltr" style="height: 2rem;">
@@ -34,11 +45,11 @@
         </div>
 
         <div class="buttons">
-          <ion-button expand="full" size="large" color="success"
+          <ion-button shape="round" expand="full" color="success"
             (click)="setLeitnerType(quote.ID, type.EASY)">آسان</ion-button>
-          <ion-button expand="full" size="large" color="warning"
+          <ion-button shape="round" expand="full" color="warning"
             (click)="setLeitnerType(quote.ID, type.MEDIUM)">متوسط</ion-button>
-          <ion-button expand="full" size="large" color="danger"
+          <ion-button shape="round" expand="full" color="danger"
             (click)="setLeitnerType(quote.ID, type.HARD)">سخت</ion-button>
         </div>
       </ng-container>
@@ -57,8 +68,4 @@
     </ng-template>
 
   </div>
-</ion-content>
-
-<ion-content class="ion-padding" *ngIf="(quote && quote?.Content)">
-
 </ion-content>

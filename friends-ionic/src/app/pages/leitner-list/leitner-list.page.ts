@@ -15,12 +15,34 @@ export class LeitnerListPage implements OnInit
   type = _mod.QuoteType;
   loading: boolean = true;
 
+  statistics = [
+    { title: "آموخته", value: 0, key: "Learned", classes: "bg-success" },
+    { title: "بلندمدت", value: 0, key: "LongTermMemory", classes: "bg-warning" },
+    { title: "کوتاه‌مدت", value: 0, key: "ShortTermMemory", classes: "bg-tertiary" },
+    { title: "یادآوری", value: 0, key: "NeedReview", classes: "bg-danger" }
+  ]
+
   constructor(
     private globalService: _svc.GlobalService) { }
 
   ngOnInit(): void
   {
     this.getData();
+    this.getStatistics();
+  }
+
+  getStatistics()
+  {
+    this.globalService.getStatistics().subscribe((statistics: _mod.Statistics[]) =>
+    {
+      if (statistics && statistics.length)
+      {
+        this.statistics.forEach(item =>
+        {
+          item.value = (statistics[0] as any)[item.key];
+        })
+      }
+    })
   }
 
   getData()
@@ -32,8 +54,11 @@ export class LeitnerListPage implements OnInit
       if (this.quotes && this.quotes.length)
       {
         this.quote = this.quotes[0];
-        this.loading = false;
       }
+      this.loading = false;
+    }, err =>
+    {
+      this.loading = false;
     });
   }
 
@@ -44,6 +69,9 @@ export class LeitnerListPage implements OnInit
     this.globalService.setLeitnerType(id, type).subscribe(res =>
     {
       this.quote = this.quotes[index + 1];
+      this.loading = false;
+    }, err =>
+    {
       this.loading = false;
     });
   }

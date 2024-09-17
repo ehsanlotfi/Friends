@@ -17,3 +17,11 @@ export interface Quote
     CntSeen: number,
     showTrans?: boolean
 }
+
+export interface Statistics
+{
+    Learned: number,
+    LongTermMemory: number,
+    ShortTermMemory: number,
+    NeedReview: number,
+}
