@@ -14,7 +14,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'seasons', pathMatch: 'full' },
       { path: 'seasons', component: pages.SeasonsPage },
       { path: ':seasonId/episods', component: pages.EpisodesPage },
-      { path: ':seasonId/episods/:episodeId', component: pages.QuotesPage },
+      { path: 'review', component: pages.QuotesPage },
+      { path: 'review/:seasonId/episods/:episodeId', component: pages.QuotesPage },
       { path: 'leitner', component: pages.LeitnerListPage },
       { path: 'about', component: pages.AboutUsPage },
     ]

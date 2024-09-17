@@ -19,22 +19,34 @@
 
     <!-- Actual quotes list when loading is false -->
     <ng-template #quoteList>
-      <ion-accordion *ngFor="let quote of quotes">
-        <ion-item slot="header" [color]="quote.CntSeen ? 'secondary' : null">
-          <ion-label class="ltr">{{ quote.Content }}</ion-label>
-        </ion-item>
-        <div class="ion-padding" slot="content">
-          <p>{{ quote.Trans }}</p>
-          <!-- <p class="ltr">Type: {{ quote.Type }}</p>
-          <p class="ltr">DateSeen: {{ quote.DateSeen }}</p>
-          <p class="ltr">CntSeen: {{ quote.CntSeen }}</p> -->
-          <ion-button expand="block" color="light" *ngIf="!quote.CntSeen" (click)="setLeitnerCard(quote)">افزودن به
-            لایتنر</ion-button>
-          <ion-text color="warning" *ngIf="quote.CntSeen">
-            <h6 class="text-center message-text ">به لایتنر اضافه شده است</h6>
+      <ng-container *ngIf="quotes && quotes.length">
+        <ion-accordion *ngFor="let quote of quotes">
+          <ion-item slot="header" [color]="quote.CntSeen ? 'secondary' : null">
+            <ion-label class="ltr">{{ quote.Content }}</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p>{{ quote.Trans }}</p>
+            <!-- <p class="ltr">Type: {{ quote.Type }}</p>
+                  <p class="ltr">DateSeen: {{ quote.DateSeen }}</p>
+                  <p class="ltr">CntSeen: {{ quote.CntSeen }}</p> -->
+            <ion-button expand="block" color="light" *ngIf="!quote.CntSeen" (click)="setLeitnerCard(quote)">افزودن به
+              لایتنر</ion-button>
+            <ion-text color="warning" *ngIf="quote.CntSeen">
+              <h6 class="text-center message-text ">به لایتنر اضافه شده است</h6>
+            </ion-text>
+          </div>
+        </ion-accordion>
+      </ng-container>
+      <ng-container *ngIf="!(quotes && quotes.length)">
+        <div class="empty-list text-center">
+          <ion-icon name="alert-circle-outline" size="large" color="medium"></ion-icon>
+          <ion-text color="medium">
+            <h4 style="line-height: 2rem;">
+              هنوز قسمتی را مشاهده نکردید
+            </h4>
           </ion-text>
         </div>
-      </ion-accordion>
+      </ng-container>
     </ng-template>
 
   </ion-accordion-group>

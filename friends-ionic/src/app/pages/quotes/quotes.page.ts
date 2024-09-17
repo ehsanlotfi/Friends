@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as _svc from 'src/app/services';
 import * as _mod from 'src/app/models';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Preferences } from '@capacitor/preferences';
 @Component({
   selector: 'app-quotes',
   templateUrl: 'quotes.page.html'
@@ -20,11 +21,32 @@ export class QuotesPage implements OnInit
     private router: Router,
     private route: ActivatedRoute) { }
 
-  ngOnInit(): void
+  async ngOnInit(): Promise<void>
   {
     this.seasonId = +this.route.snapshot.paramMap.get('seasonId')!;
     this.episodeId = +this.route.snapshot.paramMap.get('episodeId')!;
-    this.getData();
+
+    if (this.seasonId && this.episodeId)
+    {
+      await Preferences.set({ key: 'lastSeasonId', value: this.seasonId.toString() });
+      await Preferences.set({ key: 'lastEpisodeId', value: this.episodeId.toString() });
+      this.getData();
+    } else
+    {
+      this.seasonId = await this.getPreference('lastSeasonId', 0);
+      this.episodeId = await this.getPreference('lastEpisodeId', 0);
+      if (this.seasonId && this.episodeId)
+      {
+        this.getData();
+      }
+    }
+
+  }
+
+  async getPreference(key: string, defaultValue: number): Promise<number>
+  {
+    const { value } = await Preferences.get({ key });
+    return value ? +value : defaultValue;
   }
 
   getData()
