@@ -38,6 +38,9 @@ export class QuotesPage implements OnInit
       if (this.seasonId && this.episodeId)
       {
         this.getData();
+      } else
+      {
+        this.loading = false;
       }
     }
 

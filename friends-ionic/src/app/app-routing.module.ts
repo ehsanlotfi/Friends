@@ -1,10 +1,25 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import * as pages from './pages';
+import { EntryGuard } from './services/entry-guard';
+import { AppComponent } from './app.module';
+
+@Component({
+  selector: 'app-home',
+  template: ``
+})
+export class HomeComponent
+{
+}
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [EntryGuard],
+    component: HomeComponent
+  },
+  {
+    path: 'splash',
     component: pages.SplashPage
   },
   {

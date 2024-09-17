@@ -4,7 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { Router } from '@angular/router';
 import { IonicModule, IonicRouteStrategy, ToastController } from '@ionic/angular';
 import { App, URLOpenListenerEvent, URLOpenListener } from '@capacitor/app';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, HomeComponent } from './app-routing.module';
 import { SQLiteService } from './services/sqlite.service';
 import { InitializeAppService } from './services/initialize.app.service';
 import * as pages from './pages';
@@ -25,6 +25,7 @@ export class AppComponent
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     pages.SplashPage,
     pages.MasterLayout,
     pages.SeasonsPage,

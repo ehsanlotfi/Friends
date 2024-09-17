@@ -672,7 +672,133 @@ export const seasonsData: _mod.Season[] = [
         "writers": ["آندرها مایکلز"],
         "stars": ["بروک شیلدز", "رسلینچ"],
         "summary": "تغییرات در کار و رابطه مناقشه‌برانگیز راکل و پرسی.",
-        "episodes": []
+        "episodes": [
+            {
+                "number": 1,
+                "title": "The One After Vegas",
+                "summary": ""
+            },
+            {
+                "number": 2,
+                "title": "The One Where Ross Hugs Rachel",
+                "summary": ""
+            },
+            {
+                "number": 3,
+                "title": "The One with Ross' Denial",
+                "summary": ""
+            },
+            {
+                "number": 4,
+                "title": "The One Where Joey Loses His Insurance",
+                "summary": ""
+            },
+            {
+                "number": 5,
+                "title": "The One with Joey's Porsche",
+                "summary": ""
+            },
+            {
+                "number": 6,
+                "title": "The One on the Last Night",
+                "summary": ""
+            },
+            {
+                "number": 7,
+                "title": "The One Where Phoebe Runs",
+                "summary": ""
+            },
+            {
+                "number": 8,
+                "title": "The One with Ross's Teeth",
+                "summary": ""
+            },
+            {
+                "number": 9,
+                "title": "The One Where Ross Got High",
+                "summary": ""
+            },
+            {
+                "number": 10,
+                "title": "The One with the Routine",
+                "summary": ""
+            },
+            {
+                "number": 11,
+                "title": "The One with the Apothecary Table",
+                "summary": ""
+            },
+            {
+                "number": 12,
+                "title": "The One with the Joke",
+                "summary": ""
+            },
+            {
+                "number": 13,
+                "title": "The One with Rachel's Sister",
+                "summary": ""
+            },
+            {
+                "number": 14,
+                "title": "The One Where Chandler Can't Cry",
+                "summary": ""
+            },
+            {
+                "number": 15,
+                "title": "The One That Could Have Been (1)",
+                "summary": ""
+            },
+            {
+                "number": 16,
+                "title": "The One That Could Have Been (2)",
+                "summary": ""
+            },
+            {
+                "number": 17,
+                "title": "The One with Unagi",
+                "summary": ""
+            },
+            {
+                "number": 18,
+                "title": "The One Where Ross Dates a Student",
+                "summary": ""
+            },
+            {
+                "number": 19,
+                "title": "The One with Joey's Fridge",
+                "summary": ""
+            },
+            {
+                "number": 20,
+                "title": "The One with Mac and C.H.E.E.S.E.",
+                "summary": ""
+            },
+            {
+                "number": 21,
+                "title": "The One Where Ross Meets Elizabeth's Dad",
+                "summary": ""
+            },
+            {
+                "number": 22,
+                "title": "The One Where Paul's the Man",
+                "summary": ""
+            },
+            {
+                "number": 23,
+                "title": "The One with the Ring",
+                "summary": ""
+            },
+            {
+                "number": 24,
+                "title": "The One with the Proposal (1)\n                                    \n    \n                                                                            season finale",
+                "summary": ""
+            },
+            {
+                "number": 25,
+                "title": "The One with the Proposal (2)\n                                    \n    \n                                                                            season finale",
+                "summary": ""
+            }
+        ]
     },
     {
         "title": "پیشرفت شخصیت‌ها در حرفه و زندگی شخصی",
@@ -683,7 +809,128 @@ export const seasonsData: _mod.Season[] = [
         "writers": ["جوانا گرین", "فردریک ریچ"],
         "stars": ["ریتا ویلسون", "گرگ کوری"],
         "summary": "درگیری و پریودهای پیچیدهی راشل و جویی.",
-        "episodes": []
+        "episodes": [
+            {
+                "number": 1,
+                "title": "The One with Monica's Thunder",
+                "summary": ""
+            },
+            {
+                "number": 2,
+                "title": "The One with Rachel's Book",
+                "summary": ""
+            },
+            {
+                "number": 3,
+                "title": "The One with Phoebe's Cookies",
+                "summary": ""
+            },
+            {
+                "number": 4,
+                "title": "The One with Rachel's Assistant",
+                "summary": ""
+            },
+            {
+                "number": 5,
+                "title": "The One with the Engagement Picture",
+                "summary": ""
+            },
+            {
+                "number": 6,
+                "title": "The One with the Nap Partners",
+                "summary": ""
+            },
+            {
+                "number": 7,
+                "title": "The One with Ross's Library Book",
+                "summary": ""
+            },
+            {
+                "number": 8,
+                "title": "The One Where Chandler Doesn't Like Dogs",
+                "summary": ""
+            },
+            {
+                "number": 9,
+                "title": "The One with All the Candy",
+                "summary": ""
+            },
+            {
+                "number": 10,
+                "title": "The One with the Holiday Armadillo",
+                "summary": ""
+            },
+            {
+                "number": 11,
+                "title": "The One with All the Cheesecakes",
+                "summary": ""
+            },
+            {
+                "number": 12,
+                "title": "The One Where They're Up All Night",
+                "summary": ""
+            },
+            {
+                "number": 13,
+                "title": "The One Where Rosita Dies",
+                "summary": ""
+            },
+            {
+                "number": 14,
+                "title": "The One Where They All Turn Thirty",
+                "summary": ""
+            },
+            {
+                "number": 15,
+                "title": "The One with Joey's New Brain",
+                "summary": ""
+            },
+            {
+                "number": 16,
+                "title": "The One with the Truth About London",
+                "summary": ""
+            },
+            {
+                "number": 17,
+                "title": "The One with the Cheap Wedding Dress",
+                "summary": ""
+            },
+            {
+                "number": 18,
+                "title": "The One with Joey's Award",
+                "summary": ""
+            },
+            {
+                "number": 19,
+                "title": "The One with Ross and Monica's Cousin",
+                "summary": ""
+            },
+            {
+                "number": 20,
+                "title": "The One with Rachel's Big Kiss",
+                "summary": ""
+            },
+            {
+                "number": 21,
+                "title": "The One with the Vows",
+                "summary": ""
+            },
+            {
+                "number": 22,
+                "title": "The One with Chandler's Dad",
+                "summary": ""
+            },
+            {
+                "number": 23,
+                "title": "The One with Chandler and Monica's Wedding (1)                                                                                                                    season finale",
+                "summary": ""
+            },
+            {
+                "number": 24,
+                "title": "The One With Chandler And Monica's Wedding (2)                                                                                                                    season finale",
+                "summary": ""
+            }
+        ]
     },
     {
         "title": "برخورد با فشار و تحولات در زندگی شخصیت‌ها",
@@ -694,7 +941,128 @@ export const seasonsData: _mod.Season[] = [
         "writers": ["شانلی گونزالس"],
         "stars": ["بروک شیلدز"],
         "summary": "ایده‌پردازی خلاق و اختلافات روس و ریچل.",
-        "episodes": []
+        "episodes": [
+            {
+                "number": 1,
+                "title": "The One After I Do",
+                "summary": ""
+            },
+            {
+                "number": 2,
+                "title": "The One with the Red Sweater",
+                "summary": ""
+            },
+            {
+                "number": 3,
+                "title": "The One Where Rachel Tells...",
+                "summary": ""
+            },
+            {
+                "number": 4,
+                "title": "The One with the Videotape",
+                "summary": ""
+            },
+            {
+                "number": 5,
+                "title": "The One with Rachel's Date",
+                "summary": ""
+            },
+            {
+                "number": 6,
+                "title": "The One with the Halloween Party",
+                "summary": ""
+            },
+            {
+                "number": 7,
+                "title": "The One with the Stain",
+                "summary": ""
+            },
+            {
+                "number": 8,
+                "title": "The One with the Stripper",
+                "summary": ""
+            },
+            {
+                "number": 9,
+                "title": "The One with the Rumor",
+                "summary": ""
+            },
+            {
+                "number": 10,
+                "title": "The One with Monica's Boots",
+                "summary": ""
+            },
+            {
+                "number": 11,
+                "title": "The One with Ross's Step Forward",
+                "summary": ""
+            },
+            {
+                "number": 12,
+                "title": "The One Where Joey Dates Rachel",
+                "summary": ""
+            },
+            {
+                "number": 13,
+                "title": "The One Where Chandler Takes a Bath",
+                "summary": ""
+            },
+            {
+                "number": 14,
+                "title": "The One with the Secret Closet",
+                "summary": ""
+            },
+            {
+                "number": 15,
+                "title": "The One with the Birthing Video",
+                "summary": ""
+            },
+            {
+                "number": 16,
+                "title": "The One Where Joey Tells Rachel",
+                "summary": ""
+            },
+            {
+                "number": 17,
+                "title": "The One with the Tea Leaves",
+                "summary": ""
+            },
+            {
+                "number": 18,
+                "title": "The One in Massapequa",
+                "summary": ""
+            },
+            {
+                "number": 19,
+                "title": "The One with Joey's Interview",
+                "summary": ""
+            },
+            {
+                "number": 20,
+                "title": "The One with the Baby Shower",
+                "summary": ""
+            },
+            {
+                "number": 21,
+                "title": "The One with the Cooking Class",
+                "summary": ""
+            },
+            {
+                "number": 22,
+                "title": "The One Where Rachel Is Late",
+                "summary": ""
+            },
+            {
+                "number": 23,
+                "title": "The One Where Rachel Has a Baby (1)                                                                                                                    season finale",
+                "summary": ""
+            },
+            {
+                "number": 24,
+                "title": "The One Where Rachel Has A Baby (2)                                                                                                                    season finale",
+                "summary": ""
+            }
+        ]
     },
     {
         "title": "روابط عاشقانه و بازگرداندن به گذشته",
@@ -705,7 +1073,128 @@ export const seasonsData: _mod.Season[] = [
         "writers": ["آندرها مایکلز"],
         "stars": ["گریستین روس"],
         "summary": "رؤیای کنسرت راکل و شغل جدید چندین دوست.",
-        "episodes": []
+        "episodes": [
+            {
+                "number": 1,
+                "title": "The One After I Do",
+                "summary": ""
+            },
+            {
+                "number": 2,
+                "title": "The One with the Red Sweater",
+                "summary": ""
+            },
+            {
+                "number": 3,
+                "title": "The One Where Rachel Tells...",
+                "summary": ""
+            },
+            {
+                "number": 4,
+                "title": "The One with the Videotape",
+                "summary": ""
+            },
+            {
+                "number": 5,
+                "title": "The One with Rachel's Date",
+                "summary": ""
+            },
+            {
+                "number": 6,
+                "title": "The One with the Halloween Party",
+                "summary": ""
+            },
+            {
+                "number": 7,
+                "title": "The One with the Stain",
+                "summary": ""
+            },
+            {
+                "number": 8,
+                "title": "The One with the Stripper",
+                "summary": ""
+            },
+            {
+                "number": 9,
+                "title": "The One with the Rumor",
+                "summary": ""
+            },
+            {
+                "number": 10,
+                "title": "The One with Monica's Boots",
+                "summary": ""
+            },
+            {
+                "number": 11,
+                "title": "The One with Ross's Step Forward",
+                "summary": ""
+            },
+            {
+                "number": 12,
+                "title": "The One Where Joey Dates Rachel",
+                "summary": ""
+            },
+            {
+                "number": 13,
+                "title": "The One Where Chandler Takes a Bath",
+                "summary": ""
+            },
+            {
+                "number": 14,
+                "title": "The One with the Secret Closet",
+                "summary": ""
+            },
+            {
+                "number": 15,
+                "title": "The One with the Birthing Video",
+                "summary": ""
+            },
+            {
+                "number": 16,
+                "title": "The One Where Joey Tells Rachel",
+                "summary": ""
+            },
+            {
+                "number": 17,
+                "title": "The One with the Tea Leaves",
+                "summary": ""
+            },
+            {
+                "number": 18,
+                "title": "The One in Massapequa",
+                "summary": ""
+            },
+            {
+                "number": 19,
+                "title": "The One with Joey's Interview",
+                "summary": ""
+            },
+            {
+                "number": 20,
+                "title": "The One with the Baby Shower",
+                "summary": ""
+            },
+            {
+                "number": 21,
+                "title": "The One with the Cooking Class",
+                "summary": ""
+            },
+            {
+                "number": 22,
+                "title": "The One Where Rachel Is Late",
+                "summary": ""
+            },
+            {
+                "number": 23,
+                "title": "The One Where Rachel Has a Baby (1)                                                                                                                    season finale",
+                "summary": ""
+            },
+            {
+                "number": 24,
+                "title": "The One Where Rachel Has A Baby (2)                                                                                                                    season finale",
+                "summary": ""
+            }
+        ]
     },
     {
         "title": " اتفاقات غیر منتظره و شوخی‌های بزرگانه",
@@ -716,6 +1205,97 @@ export const seasonsData: _mod.Season[] = [
         "writers": ["مارتا کافمن"],
         "stars": ["آیشا تایلر"],
         "summary": "تغییرات زندگی و اختلافات روابطی.",
-        "episodes": []
+        "episodes": [
+            {
+                "number": 1,
+                "title": "The One After Joey and Rachel Kiss",
+                "summary": ""
+            },
+            {
+                "number": 2,
+                "title": "The One Where Ross Is Fine",
+                "summary": ""
+            },
+            {
+                "number": 3,
+                "title": "The One with Ross' Tan",
+                "summary": ""
+            },
+            {
+                "number": 4,
+                "title": "The One with the Cake",
+                "summary": ""
+            },
+            {
+                "number": 5,
+                "title": "The One Where Rachel's Sister Babysits",
+                "summary": ""
+            },
+            {
+                "number": 6,
+                "title": "The One with Ross's Grant",
+                "summary": ""
+            },
+            {
+                "number": 7,
+                "title": "The One with the Home Study",
+                "summary": ""
+            },
+            {
+                "number": 8,
+                "title": "The One with the Late Thanksgiving",
+                "summary": ""
+            },
+            {
+                "number": 9,
+                "title": "The One with the Birth Mother",
+                "summary": ""
+            },
+            {
+                "number": 10,
+                "title": "The One Where Chandler Gets Caught",
+                "summary": ""
+            },
+            {
+                "number": 11,
+                "title": "The One Where the Stripper Cries",
+                "summary": ""
+            },
+            {
+                "number": 12,
+                "title": "The One with Phoebe's Wedding",
+                "summary": ""
+            },
+            {
+                "number": 13,
+                "title": "The One Where Joey Speaks French",
+                "summary": ""
+            },
+            {
+                "number": 14,
+                "title": "The One with Princess Consuela",
+                "summary": ""
+            },
+            {
+                "number": 15,
+                "title": "The One Where Estelle Dies",
+                "summary": ""
+            },
+            {
+                "number": 16,
+                "title": "The One with Rachel's Going Away Party",
+                "summary": ""
+            },
+            {
+                "number": 17,
+                "title": "The Last One (1)                                                                                                                    season finale",
+                "summary": ""
+            },
+            {
+                "number": 18,
+                "title": "The Last One (2)                                                                                                                    series finale",
+                "summary": ""
+            }
+        ]
     }
 ];
