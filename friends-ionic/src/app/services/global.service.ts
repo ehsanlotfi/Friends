@@ -6,6 +6,7 @@ import { Observable, map, of } from 'rxjs';
 import { fakeData } from './fake-data';
 import { seasonsData } from './season.data';
 import { capSQLiteChanges } from '@capacitor-community/sqlite';
+import { ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,17 @@ export class GlobalService
 
   seasons = seasonsData;
 
-  constructor(private readonly _sqlite: SQLiteService) { }
+  constructor(private readonly _sqlite: SQLiteService, private toastController: ToastController) { }
+
+  async toast(message: string, duration: number = 2000, position: 'top' | 'middle' | 'bottom' = 'bottom')
+  {
+    const toast = await this.toastController.create({
+      message,
+      duration,
+      position
+    });
+    await toast.present();
+  }
 
   getAllSeasons(): _mod.Season[]
   {
@@ -75,8 +86,8 @@ export class GlobalService
   {
 
     const query = type == _mod.QuoteType.EASY ?
-      `UPDATE Translates SET TYPE = ${type}, DateSeen = strftime('%s', 'now'), CntSeen = CntSeen + 1 WHERE ID = ${id}` :
-      `UPDATE Translates SET TYPE = ${type}, DateSeen = strftime('%s', 'now') WHERE ID = ${id}`;
+      `UPDATE Translates SET TYPE = ${type}, DateSeen = strftime('%s', 'now'), CntSeen = CntSeen + 1 WHERE ID = ${id};` :
+      `UPDATE Translates SET TYPE = ${type}, DateSeen = strftime('%s', 'now') WHERE ID = ${id};`;
 
     if (Capacitor.isNativePlatform())
     {

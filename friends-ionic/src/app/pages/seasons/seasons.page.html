@@ -18,7 +18,8 @@
         <p><strong>نویسندگان:</strong> {{ season.writers.join(', ') }}</p>
         <p><strong>ستارگان:</strong> {{ season.stars.join(', ') }}</p>
         <p><strong>خلاصه:</strong> {{ season.summary }}</p>
-        <ion-button expand="block" [routerLink]="['/app', season.number, 'episods']">نمایش قسمت‌ها</ion-button>
+        <ion-button expand="block" color="light" [routerLink]="['/app', season.number, 'episods']">نمایش
+          قسمت‌ها</ion-button>
       </div>
     </ion-accordion>
   </ion-accordion-group>

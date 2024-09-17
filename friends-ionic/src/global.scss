@@ -136,6 +136,14 @@
     flex-flow: column;
 }
 
+.text-center {
+    text-align: center !important;
+}
+
+.m-auto {
+    margin: 0 auto !important;
+}
+
 .rtl {
     direction: rtl !important;
     text-align: right !important;
@@ -158,4 +166,9 @@
     .card {
         height: 30vh;
     }
+}
+
+.message-text {
+    opacity: .6;
+    font-size: 0.7rem;
 }

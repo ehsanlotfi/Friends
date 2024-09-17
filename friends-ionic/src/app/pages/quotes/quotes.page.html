@@ -8,17 +8,35 @@
 
 <ion-content [fullscreen]="true">
   <ion-accordion-group>
-    <ion-accordion *ngFor="let quote of quotes">
-      <ion-item slot="header">
-        <ion-label class="ltr">{{ quote.Content }}</ion-label>
+    <!-- Skeleton loader for quotes -->
+    <ng-container *ngIf="loading; else quoteList">
+      <ion-item *ngFor="let _ of skeletonArray">
+        <ion-label>
+          <ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text>
+        </ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
-        <p>{{ quote.Trans }}</p>
-        <ion-button expand="block" *ngIf="!quote.CntSeen" (click)="setLeitnerCard(quote)">افزودن به لایتنر</ion-button>
-        <ion-button expand="block" fill="outline" *ngIf="quote.CntSeen" [disabled]="true">به لایتنر اضافه شده
-          است</ion-button>
-      </div>
-    </ion-accordion>
+    </ng-container>
+
+    <!-- Actual quotes list when loading is false -->
+    <ng-template #quoteList>
+      <ion-accordion *ngFor="let quote of quotes">
+        <ion-item slot="header" [color]="quote.CntSeen ? 'secondary' : null">
+          <ion-label class="ltr">{{ quote.Content }}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <p>{{ quote.Trans }}</p>
+          <p class="ltr">Type: {{ quote.Type }}</p>
+          <p class="ltr">DateSeen: {{ quote.DateSeen }}</p>
+          <p class="ltr">CntSeen: {{ quote.CntSeen }}</p>
+          <ion-button expand="block" color="light" *ngIf="!quote.CntSeen" (click)="setLeitnerCard(quote)">افزودن به
+            لایتنر</ion-button>
+          <ion-text color="warning" *ngIf="quote.CntSeen">
+            <h6 class="text-center message-text ">به لایتنر اضافه شده است</h6>
+          </ion-text>
+        </div>
+      </ion-accordion>
+    </ng-template>
+
   </ion-accordion-group>
 
 </ion-content>

@@ -12,6 +12,8 @@ export class QuotesPage implements OnInit
   seasonId: number = 0;
   episodeId: number = 0;
   quotes: _mod.Quote[] = [];
+  loading: boolean = true;
+  skeletonArray = Array(15).fill(null);
 
   constructor(
     private globalService: _svc.GlobalService,
@@ -27,9 +29,11 @@ export class QuotesPage implements OnInit
 
   getData()
   {
+    this.loading = true;
     this.globalService.getAllQuote(this.seasonId, this.episodeId).subscribe(data =>
     {
       this.quotes = data;
+      this.loading = false;
     });
   }
 
