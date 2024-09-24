@@ -41,6 +41,23 @@ export class SQLiteService
         console.log('Database copied successfully.');
     }
 
+    private async setSettings()
+    {
+        const { value } = await Preferences.get({ key: 'settings' });
+
+        if (value)
+        {
+            return;
+        }
+        await Preferences.set({
+            key: 'settings', value: JSON.stringify({
+                fontSize: '16',
+                theme: '0',
+                cefr: '1',
+            })
+        });
+    }
+
     private async createConnection()
     {
         return await CapacitorSQLite.createConnection({
@@ -59,6 +76,7 @@ export class SQLiteService
 
     public async initDataBase()
     {
+        await this.setSettings();
         if (Capacitor.isNativePlatform())
         {
             await this.copyDB();

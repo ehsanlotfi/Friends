@@ -5,3 +5,4 @@ export * from "./about-us/about-us.page";
 export * from "./episodes/episodes.page";
 export * from "./leitner-list/leitner-list.page";
 export * from "./quotes/quotes.page";
+export * from "./settings/settings.page";

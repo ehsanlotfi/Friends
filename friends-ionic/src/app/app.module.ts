@@ -9,6 +9,7 @@ import { SQLiteService } from './services/sqlite.service';
 import { InitializeAppService } from './services/initialize.app.service';
 import * as pages from './pages';
 import { GlobalService } from './services';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export function initializeFactory(init: InitializeAppService)
 {
   return () => init.initializeApp();
@@ -32,9 +33,15 @@ export class AppComponent
     pages.AboutUsPage,
     pages.EpisodesPage,
     pages.LeitnerListPage,
-    pages.QuotesPage
+    pages.QuotesPage,
+    pages.SettingsPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IonicModule.forRoot(),
+    AppRoutingModule],
   providers: [
     SQLiteService,
     GlobalService,

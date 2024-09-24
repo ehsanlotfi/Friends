@@ -32,6 +32,7 @@ const routes: Routes = [
       { path: 'review', component: pages.QuotesPage },
       { path: 'review/:seasonId/episods/:episodeId', component: pages.QuotesPage },
       { path: 'leitner', component: pages.LeitnerListPage },
+      { path: 'settings', component: pages.SettingsPage },
       { path: 'about', component: pages.AboutUsPage },
     ]
   }
