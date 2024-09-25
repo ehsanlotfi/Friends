@@ -8,7 +8,7 @@ import { AppRoutingModule, HomeComponent } from './app-routing.module';
 import { SQLiteService } from './services/sqlite.service';
 import { InitializeAppService } from './services/initialize.app.service';
 import * as pages from './pages';
-import { GlobalService } from './services';
+import { ColorModeService, GlobalService } from './services';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export function initializeFactory(init: InitializeAppService)
 {
@@ -21,6 +21,23 @@ export function initializeFactory(init: InitializeAppService)
 })
 export class AppComponent
 {
+
+  constructor(
+    colorMode: ColorModeService
+  )
+  {
+    colorMode.darkMode$.subscribe((darkMode) =>
+    {
+      if (darkMode)
+      {
+        document.documentElement.classList.add('ion-palette-dark');
+      } else
+      {
+        document.documentElement.classList.remove('ion-palette-dark');
+      }
+    })
+  }
+
 }
 
 @NgModule({
@@ -45,6 +62,7 @@ export class AppComponent
   providers: [
     SQLiteService,
     GlobalService,
+    ColorModeService,
     InitializeAppService,
     {
       provide: APP_INITIALIZER,

@@ -15,10 +15,11 @@
     </ion-item>
 
     <ion-item>
-      <ion-select formControlName="theme" label="رنگ پوسته" label-placement="fixed" placeholder="رنگ پوسته">
-        <ion-select-option value="2">روشن</ion-select-option>
-        <ion-select-option value="1">تاریک</ion-select-option>
-        <ion-select-option value="0">پیش‌فرض</ion-select-option>
+      <ion-select formControlName="theme" label="رنگ پوسته" label-placement="fixed" placeholder="رنگ پوسته"
+        (ionChange)="changeColorScheme($event)">
+        <ion-select-option value="light">روشن</ion-select-option>
+        <ion-select-option value="dark">تاریک</ion-select-option>
+        <ion-select-option value="auto">پیش‌فرض</ion-select-option>
       </ion-select>
     </ion-item>
 

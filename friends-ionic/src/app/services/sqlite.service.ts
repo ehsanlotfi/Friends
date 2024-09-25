@@ -52,7 +52,7 @@ export class SQLiteService
         await Preferences.set({
             key: 'settings', value: JSON.stringify({
                 fontSize: '16',
-                theme: '0',
+                theme: 'auto',
                 cefr: '1',
             })
         });
