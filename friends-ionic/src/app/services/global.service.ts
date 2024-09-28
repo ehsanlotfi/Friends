@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as _mod from 'src/app/models';
 import { Capacitor } from '@capacitor/core';
 import { SQLiteService } from './sqlite.service';
-import { Observable, map, of } from 'rxjs';
+import { Observable, from, map, of, switchMap } from 'rxjs';
 import { fakeData } from './fake-data';
 import { seasonsData } from './season.data';
 import { capSQLiteChanges } from '@capacitor-community/sqlite';
@@ -39,19 +39,25 @@ export class GlobalService
     return this.seasons.filter(f => f.number == seasonId);
   }
 
-  async getAllQuote(seasonId: number, episodeId: number): Promise<Observable<_mod.Quote[]>>
+  getAllQuote(seasonId: number, episodeId: number): Observable<_mod.Quote[]>
   {
     if (Capacitor.isNativePlatform())
     {
-      let level = "1";
-      const { value } = await Preferences.get({ key: 'settings' });
-      if (value)
-      {
-        level = (JSON.parse(value) as _mod.ISetting).cefr;
-      }
-      return this._sqlite.queryObservable<_mod.Quote>(`SELECT  * FROM Translates Where Season = ${seasonId} AND Capture = ${episodeId} AND level >= ${level}`);
+      return from(Preferences.get({ key: 'settings' })).pipe(
+        switchMap(({ value }) =>
+        {
+          let level = "1";
+          if (value)
+          {
+            level = (JSON.parse(value) as _mod.ISetting).cefr;
+          }
+          // Return the SQLite query as an observable
+          return this._sqlite.queryObservable<_mod.Quote>(`SELECT  * FROM Translates Where Season = ${seasonId} AND Capture = ${episodeId} AND level >= ${level}`);
+        })
+      );
     } else
     {
+      // Use 'of' to return fakeData as an observable
       return of(fakeData);
     }
   }
