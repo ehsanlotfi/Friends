@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Preferences } from '@capacitor/preferences';
-import { ColorModeService } from 'src/app/services';
+import { SettingsService } from 'src/app/services';
 
 @Component({
   selector: 'app-settings',
@@ -12,7 +12,7 @@ export class SettingsPage implements OnInit
 
   settingsForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private colorMode: ColorModeService)
+  constructor(private fb: FormBuilder, private settingSvc: SettingsService)
   {
     this.settingsForm = this.fb.group({
       fontSize: '16',
@@ -29,15 +29,7 @@ export class SettingsPage implements OnInit
 
   async onSubmit()
   {
-    await Preferences.set({
-      key: 'settings', value: JSON.stringify(this.settingsForm.value)
-    });
-  }
-
-  async changeColorScheme(event: any)
-  {
-    const colorMode = event.detail.value;
-    this.colorMode.setMode(colorMode);
+    this.settingSvc.setSettings(this.settingsForm.value);
   }
 
 }

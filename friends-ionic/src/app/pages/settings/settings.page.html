@@ -15,8 +15,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-select formControlName="theme" label="رنگ پوسته" label-placement="fixed" placeholder="رنگ پوسته"
-        (ionChange)="changeColorScheme($event)">
+      <ion-select formControlName="theme" label="رنگ پوسته" label-placement="fixed" placeholder="رنگ پوسته">
         <ion-select-option value="light">روشن</ion-select-option>
         <ion-select-option value="dark">تاریک</ion-select-option>
         <ion-select-option value="auto">پیش‌فرض</ion-select-option>
@@ -38,13 +37,11 @@
   </form>
 
   <ion-list>
-    <ion-item>
+    <ion-item [routerLink]="['/app/about']">
       <ion-label>درباره</ion-label>
-      <ion-button>بیشتر</ion-button>
     </ion-item>
-    <ion-item>
+    <ion-item [routerLink]="['/app/contact']">
       <ion-label>ارتباط با ما</ion-label>
-      <ion-button>بیشتر</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

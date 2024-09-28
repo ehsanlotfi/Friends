@@ -34,6 +34,7 @@ const routes: Routes = [
       { path: 'leitner', component: pages.LeitnerListPage },
       { path: 'settings', component: pages.SettingsPage },
       { path: 'about', component: pages.AboutUsPage },
+      { path: 'contact', component: pages.ContactUsPage },
     ]
   }
 ];

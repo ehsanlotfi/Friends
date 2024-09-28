@@ -6,3 +6,4 @@ export * from "./episodes/episodes.page";
 export * from "./leitner-list/leitner-list.page";
 export * from "./quotes/quotes.page";
 export * from "./settings/settings.page";
+export * from "./contact-us/contact-us.page";

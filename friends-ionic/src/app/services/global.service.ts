@@ -7,6 +7,7 @@ import { fakeData } from './fake-data';
 import { seasonsData } from './season.data';
 import { capSQLiteChanges } from '@capacitor-community/sqlite';
 import { ToastController } from '@ionic/angular';
+import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
   providedIn: 'root'
@@ -38,11 +39,17 @@ export class GlobalService
     return this.seasons.filter(f => f.number == seasonId);
   }
 
-  getAllQuote(seasonId: number, episodeId: number): Observable<_mod.Quote[]>
+  async getAllQuote(seasonId: number, episodeId: number): Promise<Observable<_mod.Quote[]>>
   {
     if (Capacitor.isNativePlatform())
     {
-      return this._sqlite.queryObservable<_mod.Quote>(`SELECT  * FROM Translates Where Season = ${seasonId} AND Capture = ${episodeId}`);
+      let level = "1";
+      const { value } = await Preferences.get({ key: 'settings' });
+      if (value)
+      {
+        level = (JSON.parse(value) as _mod.ISetting).cefr;
+      }
+      return this._sqlite.queryObservable<_mod.Quote>(`SELECT  * FROM Translates Where Season = ${seasonId} AND Capture = ${episodeId} AND level >= ${level}`);
     } else
     {
       return of(fakeData);

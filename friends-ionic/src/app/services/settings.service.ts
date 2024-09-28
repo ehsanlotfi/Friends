@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
-export type ColorMode = 'auto' | 'dark' | 'light';
+import { ISetting, ThemeMode } from '../models';
+import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
     providedIn: 'root',
 })
-export class ColorModeService
+export class SettingsService
 {
     /**
      * Variable that controls the user interface. Used to toggle 'dark-theme' class.
@@ -25,47 +25,47 @@ export class ColorModeService
         if (this.getMode() === 'auto')
         {
             this.darkMode$.next(this.prefDark.matches);
-            this.listenToColorModeChanges();
+            this.listenToThemeModeChanges();
         }
     }
 
-    private applyColorModeChanges = (event: any) =>
+    private applyThemeModeChanges = (event: any) =>
     {
         this.darkMode$.next(event.matches);
     }
 
-    private listenToColorModeChanges()
+    private listenToThemeModeChanges()
     {
-        this.prefDark.addEventListener('change', this.applyColorModeChanges);
+        this.prefDark.addEventListener('change', this.applyThemeModeChanges);
     }
 
-    private removeColorModeChangesListener()
+    private removeThemeModeChangesListener()
     {
-        this.prefDark.removeEventListener('change', this.applyColorModeChanges);
+        this.prefDark.removeEventListener('change', this.applyThemeModeChanges);
     }
 
     /**
      * Set user preferred color mode.
      */
-    setMode = (colorMode: ColorMode) =>
+    setMode = (ThemeMode: ThemeMode) =>
     {
-        localStorage.setItem('mode', colorMode);
+        localStorage.setItem('mode', ThemeMode);
 
-        switch (colorMode)
+        switch (ThemeMode)
         {
             case 'auto':
                 this.darkMode$.next(this.prefDark.matches);
-                this.listenToColorModeChanges();
+                this.listenToThemeModeChanges();
                 break;
 
             case 'dark':
                 this.darkMode$.next(true);
-                this.removeColorModeChangesListener();
+                this.removeThemeModeChangesListener();
                 break;
 
             case 'light':
                 this.darkMode$.next(false);
-                this.removeColorModeChangesListener();
+                this.removeThemeModeChangesListener();
                 break;
 
             default:
@@ -76,9 +76,28 @@ export class ColorModeService
     /**
      * Get user preferred color mode.
      */
-    getMode = (): ColorMode =>
+    getMode = (): ThemeMode =>
     {
         // Get user preferred mode from localStorage and if not set return default
-        return localStorage.getItem('mode') as ColorMode ?? 'auto';
+        return localStorage.getItem('mode') as ThemeMode ?? 'auto';
+    }
+
+    async setSettings(Settings: ISetting | null)
+    {
+        if (!Settings)
+        {
+            Settings = {
+                cefr: "1",
+                fontSize: "16px",
+                theme: "auto"
+            }
+        }
+
+        await Preferences.set({
+            key: 'settings', value: JSON.stringify(Settings)
+        });
+
+        this.setMode(Settings.theme);
+        document.documentElement.style.setProperty('--font-size', Settings.fontSize);
     }
 }

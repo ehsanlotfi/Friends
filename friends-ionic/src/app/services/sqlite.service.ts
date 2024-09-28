@@ -4,6 +4,7 @@ import { Capacitor } from '@capacitor/core';
 import { FilesystemPlugin, Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Observable, from, map, mergeMap } from 'rxjs';
+import { SettingsService } from './settings.service';
 
 @Injectable({
     providedIn: "root"
@@ -15,6 +16,11 @@ export class SQLiteService
     private version = 1;
     private transaction = false;
     private encrypted = false;
+
+    constructor(private settingSvc: SettingsService)
+    {
+
+    }
 
     private async copyDB()
     {
@@ -47,15 +53,12 @@ export class SQLiteService
 
         if (value)
         {
+            this.settingSvc.setSettings(JSON.parse(value));
             return;
+        } else
+        {
+            this.settingSvc.setSettings(null);
         }
-        await Preferences.set({
-            key: 'settings', value: JSON.stringify({
-                fontSize: '16',
-                theme: 'auto',
-                cefr: '1',
-            })
-        });
     }
 
     private async createConnection()

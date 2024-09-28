@@ -8,7 +8,7 @@ import { AppRoutingModule, HomeComponent } from './app-routing.module';
 import { SQLiteService } from './services/sqlite.service';
 import { InitializeAppService } from './services/initialize.app.service';
 import * as pages from './pages';
-import { ColorModeService, GlobalService } from './services';
+import { SettingsService, GlobalService } from './services';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export function initializeFactory(init: InitializeAppService)
 {
@@ -23,7 +23,7 @@ export class AppComponent
 {
 
   constructor(
-    colorMode: ColorModeService
+    colorMode: SettingsService
   )
   {
     colorMode.darkMode$.subscribe((darkMode) =>
@@ -51,7 +51,8 @@ export class AppComponent
     pages.EpisodesPage,
     pages.LeitnerListPage,
     pages.QuotesPage,
-    pages.SettingsPage
+    pages.SettingsPage,
+    pages.ContactUsPage
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,7 @@ export class AppComponent
   providers: [
     SQLiteService,
     GlobalService,
-    ColorModeService,
+    SettingsService,
     InitializeAppService,
     {
       provide: APP_INITIALIZER,

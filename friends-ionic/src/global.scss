@@ -36,11 +36,6 @@
 @import '@ionic/angular/css/palettes/dark.class.css';
 // @import "@ionic/angular/css/palettes/dark.system.css";
 
-:root {
-    direction: rtl;
-    --font-size: 16px;
-}
-
 @font-face {
     font-family: IRANSans;
     font-style: normal;
@@ -228,4 +223,12 @@
 
 .mt-5 {
     margin-top: 5vh !important;
+}
+
+ion-accordion-group {
+    ion-accordion {
+        ion-label {
+            font-size: var(--font-size) !important;
+        }
+    }
 }
