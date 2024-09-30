@@ -15,6 +15,7 @@ export interface Quote
     Type: QuoteType,
     DateSeen: number,
     CntSeen: number,
+    Level: number,
     showTrans?: boolean
 }
 

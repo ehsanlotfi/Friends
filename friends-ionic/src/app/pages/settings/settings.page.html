@@ -7,15 +7,17 @@
 <ion-content>
   <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
     <ion-item>
-      <ion-select formControlName="fontSize" label="اندازه فونت" label-placement="fixed" placeholder="اندازه فونت">
-        <ion-select-option value="14">14px</ion-select-option>
-        <ion-select-option value="16">16px</ion-select-option>
-        <ion-select-option value="18">18px</ion-select-option>
+      <ion-select (ionChange)="onSubmit()" formControlName="fontSize" label="اندازه فونت" label-placement="fixed"
+        placeholder="اندازه فونت">
+        <ion-select-option value="14px">14px</ion-select-option>
+        <ion-select-option value="16px">16px</ion-select-option>
+        <ion-select-option value="18px">18px</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-select formControlName="theme" label="رنگ پوسته" label-placement="fixed" placeholder="رنگ پوسته">
+      <ion-select (ionChange)="onSubmit()" formControlName="theme" label="رنگ پوسته" label-placement="fixed"
+        placeholder="رنگ پوسته">
         <ion-select-option value="light">روشن</ion-select-option>
         <ion-select-option value="dark">تاریک</ion-select-option>
         <ion-select-option value="auto">پیش‌فرض</ion-select-option>
@@ -23,17 +25,16 @@
     </ion-item>
 
     <ion-item>
-      <ion-select formControlName="cefr" label="سطح زبان‌آموز" label-placement="fixed" placeholder="سطح زبان‌آموز">
-        <ion-select-option value="1">A1</ion-select-option>
-        <ion-select-option value="2">A2</ion-select-option>
-        <ion-select-option value="3">B1</ion-select-option>
-        <ion-select-option value="4">B2</ion-select-option>
-        <ion-select-option value="5">C1</ion-select-option>
-        <ion-select-option value="6">C2</ion-select-option>
+      <ion-select (ionChange)="onSubmit()" formControlName="cefr" label="سطح زبان‌آموز" label-placement="fixed"
+        placeholder="سطح زبان‌آموز">
+        <ion-select-option value="1">خیلی ضعیف</ion-select-option>
+        <ion-select-option value="2">ضعیف</ion-select-option>
+        <ion-select-option value="3">نسبتاً ضعیف</ion-select-option>
+        <ion-select-option value="4">متوسط</ion-select-option>
+        <ion-select-option value="5">نسبتاً قوی</ion-select-option>
+        <ion-select-option value="6">قوی</ion-select-option>
       </ion-select>
     </ion-item>
-
-    <ion-button color="light" expand="full" type="submit">ذخیره</ion-button>
   </form>
 
   <ion-list>

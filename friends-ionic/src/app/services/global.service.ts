@@ -77,10 +77,11 @@ export class GlobalService
 
   getCards(): Observable<_mod.Quote[]>
   {
-    const query = `SELECT  * FROM Translates WHERE
-      (DateSeen > strftime('%s', 'now', '-7 days') AND Type = 0 AND CntSeen < 4) OR
-      (DateSeen > strftime('%s', 'now', '-3 days') AND Type = 1) OR
-      (DateSeen > strftime('%s', 'now', '-1 days') AND Type = 2)`;
+    const query = `SELECT * FROM Translates 
+      WHERE 
+      (DateSeen <= strftime('%s', 'now', '-7 days') AND Type = 0 AND CntSeen < 4) OR
+      (DateSeen <= strftime('%s', 'now', '-3 days') AND Type = 1) OR
+      (DateSeen <= strftime('%s', 'now', '-1 days') AND Type = 2)`;
 
     if (Capacitor.isNativePlatform())
     {

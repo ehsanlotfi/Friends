@@ -15,7 +15,7 @@ export class SettingsPage implements OnInit
   constructor(private fb: FormBuilder, private settingSvc: SettingsService)
   {
     this.settingsForm = this.fb.group({
-      fontSize: '16',
+      fontSize: '16px',
       theme: 'auto',
       cefr: '1',
     });

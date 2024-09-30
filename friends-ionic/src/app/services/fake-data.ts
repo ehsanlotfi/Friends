@@ -1,6 +1,6 @@
 import * as _mod from 'src/app/models';
 
-export const fakeData: _mod.Quote[] = [
+export const fakeData: any[] = [
     {
         "ID": 1,
         "Content": "This is a sample sentence.",

@@ -26,9 +26,10 @@
           </ion-item>
           <div class="ion-padding" slot="content">
             <p>{{ quote.Trans }}</p>
-            <!-- <p class="ltr">Type: {{ quote.Type }}</p>
-                  <p class="ltr">DateSeen: {{ quote.DateSeen }}</p>
-                  <p class="ltr">CntSeen: {{ quote.CntSeen }}</p> -->
+            <p class="ltr">Type: {{ quote.Type }}</p>
+            <p class="ltr">DateSeen: {{ quote.DateSeen }}</p>
+            <p class="ltr">CntSeen: {{ quote.CntSeen }}</p>
+            <p class="ltr">Level: {{ quote.Level }}</p>
             <ion-button expand="block" color="light" *ngIf="!quote.CntSeen" (click)="setLeitnerCard(quote)">افزودن به
               لایتنر</ion-button>
             <ion-text color="warning" *ngIf="quote.CntSeen">
