@@ -2,9 +2,9 @@ import * as _mod from 'src/app/models';
 
 export const fakeData: any[] = [
     {
-        "ID": 1,
-        "Content": "This is a sample sentence.",
-        "Trans": "این یک جمله نمونه است.",
+        "ID": 2,
+        "Content": "The quick brown fox jumps over the lazy dog.",
+        "Trans": "روباه سریع و قهوه‌ای روی سگ تنبل می‌پرد.",
         "Season": 1,
         "Capture": 1,
         "Type": 0,
@@ -12,9 +12,9 @@ export const fakeData: any[] = [
         "CntSeen": 2
     },
     {
-        "ID": 2,
-        "Content": "The quick brown fox jumps over the lazy dog.",
-        "Trans": "روباه سریع و قهوه‌ای روی سگ تنبل می‌پرد.",
+        "ID": 1,
+        "Content": "This is a sample sentence.",
+        "Trans": "این یک جمله نمونه است.",
         "Season": 1,
         "Capture": 2,
         "Type": 1,
