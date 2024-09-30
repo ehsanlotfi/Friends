@@ -52,7 +52,7 @@ export class GlobalService
             level = (JSON.parse(value) as _mod.ISetting).cefr;
           }
           // Return the SQLite query as an observable
-          return this._sqlite.queryObservable<_mod.Quote>(`SELECT  * FROM Translates Where Season = ${seasonId} AND Capture = ${episodeId} AND level >= ${level}`);
+          return this._sqlite.queryObservable<_mod.Quote>(`SELECT  * FROM Translates Where Season = ${seasonId} AND Capture = ${episodeId} AND Level >= ${level}`);
         })
       );
     } else
