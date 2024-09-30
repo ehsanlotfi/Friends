@@ -1,5 +1,5 @@
-export interface Episode {
+export interface Episode
+{
     number: number;
-    title: string,
-    summary: string
+    title: string
 }

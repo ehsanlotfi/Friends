@@ -8,8 +8,6 @@ import * as _mod from 'src/app/models';
 })
 export class EpisodesPage implements OnInit
 {
-
-  title: string = "";
   number: number = 0;
   seasons: _mod.Season[] = [];
   episodes: _mod.Episode[] = [];
@@ -24,7 +22,6 @@ export class EpisodesPage implements OnInit
   {
     const seasonId = this.route.snapshot.paramMap.get('seasonId');
     this.seasons = this.globalService.getAllEpisode(+seasonId!);
-    this.title = this.seasons[0].title;
     this.number = this.seasons[0].number;
     this.episodes = this.seasons[0].episodes as _mod.Episode[];
   }

@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      فصل‌ها
-    </ion-title>
+    <ion-title>فصل ها</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,14 +8,10 @@
   <ion-accordion-group>
     <ion-accordion *ngFor="let season of seasons">
       <ion-item slot="header">
-        <ion-label>فصل {{ season.number }}: {{ season.title }}</ion-label>
+        <ion-label>فصل: {{ season.number }}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <p><strong>تاریخ انتشار:</strong> {{ season.date }}</p>
-        <p><strong>کارگردان:</strong> {{ season.director }}</p>
-        <p><strong>نویسندگان:</strong> {{ season.writers.join(', ') }}</p>
-        <p><strong>ستارگان:</strong> {{ season.stars.join(', ') }}</p>
-        <p><strong>خلاصه:</strong> {{ season.summary }}</p>
+        <p><strong>تاریخ انتشار:</strong> {{ season.from }}, {{ season.to }}</p>
         <ion-button expand="block" color="light" [routerLink]="['/app', season.number, 'episods']">نمایش
           قسمت‌ها</ion-button>
       </div>

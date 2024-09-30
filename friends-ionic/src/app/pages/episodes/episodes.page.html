@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      فصل{{ number }}: {{ title }}
+      فصل {{ number }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,10 +10,9 @@
   <ion-accordion-group>
     <ion-accordion *ngFor="let episode of episodes">
       <ion-item slot="header">
-        <ion-label>اپیزود {{ episode.number }}: {{ episode.title }}</ion-label>
+        <ion-label>قسمت: {{ episode.number }}: {{ episode.title }}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <p><strong>خلاصه:</strong> {{ episode.summary }}</p>
         <ion-button expand="block" color="light" [routerLink]="['/app/review', number, 'episods', episode.number]">نمایش
           جملات</ion-button>
       </div>
