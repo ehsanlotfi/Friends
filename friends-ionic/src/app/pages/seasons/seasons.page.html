@@ -11,7 +11,8 @@
         <ion-label>فصل: {{ season.number }}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <p><strong>تاریخ انتشار:</strong> {{ season.from }}, {{ season.to }}</p>
+        <ion-img [style.height.vh]="30" src="assets/seasons/{{ season.number }}.jpg"></ion-img>
+        <p class="text-center">{{ season.from }}, {{ season.to }}</p>
         <ion-button expand="block" color="light" [routerLink]="['/app', season.number, 'episods']">نمایش
           قسمت‌ها</ion-button>
       </div>
